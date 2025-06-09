@@ -21,3 +21,14 @@ class InstallmentSerializer(serializers.ModelSerializer):
             "updated_at",
             "is_active"
         ]
+
+    def validate_amount(
+        self,
+        value: float
+    ) -> float:
+        if value < 0:
+            raise serializers.ValidationError(
+                "Ensure this value is greater than or equal to 0."
+            )
+
+        return value

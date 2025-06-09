@@ -732,6 +732,18 @@ files = [
 ]
 
 [[package]]
+name = "phonenumbers"
+version = "9.0.7"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "phonenumbers-9.0.7-py2.py3-none-any.whl", hash = "sha256:306eb14d1eaeb82230a08aa1614d04c93322b65b1ded2fff585161ed7eca39fc"},
+    {file = "phonenumbers-9.0.7.tar.gz", hash = "sha256:d4cc2aa36cbf9b0004c370f406d1510ddef56bba9e5f759471ef47e998d8a2f9"},
+]
+
+[[package]]
 name = "platformdirs"
 version = "4.3.8"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
@@ -1251,7 +1263,18 @@ h2 = ["h2 (>=4,<5)"]
 socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
+[[package]]
+name = "validate-docbr"
+version = "1.11.0"
+description = "Validate brazilian documents."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "validate_docbr-1.11.0-py3-none-any.whl", hash = "sha256:b7d71f4700bfa44866bdeb7626d6cd188a9dd65e4cd0e3b3ec30d7259351ba0b"},
+]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "ae61789850d8e5aa6008265ee22b9cc072c2eb1c29cf1e059b7a93e6db2aa7b0"
+content-hash = "6ca767ff9ae4899aed355cfbdf57cf0cb66d9983a67d911d408adde3385e9b5c"
