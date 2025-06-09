@@ -1,0 +1,81 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+db.sqlite3
+*.mo
+
+# Django migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+.coverage
+*.lcov
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Pyre
+.pyre/
+
+# Poetry
+poetry.lock
+# (opcional, se quiser versionar o lock file, remova a linha acima)
+
+# Virtual environments
+venv/
+.venv/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# JetBrains IDEs
+.idea/
+
+# Static/media files (em produção, podem ser ignorados)
+staticfiles/
+media/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Sphinx documentation
+docs/_build/
+
+# Others
+*.bak
+*.swp
+*.tmp
