@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "corsheaders",
     "oauth2_provider",
+    "contracts"
 ]
 
 MIDDLEWARE = [
