@@ -30,5 +30,8 @@ class ContractViewSet(viewsets.ModelViewSet):
 
     ordering_fields = [
         "emission_date",
-        "amount"
+        "amount",
+        "created_at"
     ]
+
+    ordering = ["-created_at"]
