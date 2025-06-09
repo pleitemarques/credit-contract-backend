@@ -62,7 +62,7 @@ DATABASES = {
         "PASSWORD": config("DB_PASSWORD", cast=str),
         "HOST": config("DB_HOST", cast=str),
         "PORT": config("DB_PORT", cast=str),
-    }
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -102,12 +102,6 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ],
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
-    ],
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
 }
 
 SPECTACULAR_SETTINGS = {
@@ -116,28 +110,4 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "COMPONENT_SPLIT_REQUEST": True,
-    "SECURITY": [
-        {
-            "oauth2": [
-                "read",
-                "write",
-            ]
-        }
-    ],
-    "COMPONENTS": {
-        "securitySchemes": {
-            "oauth2": {
-                "type": "oauth2",
-                "flows": {
-                    "password": {
-                        "tokenUrl": "/o/token/",
-                        "scopes": {
-                            "read": "Read access",
-                            "write": "Write access",
-                        },
-                    }
-                },
-            }
-        }
-    },
 }
