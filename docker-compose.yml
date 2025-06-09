@@ -1,16 +1,42 @@
 services:
-  db:
+  postgres:
     image: postgres:15
-    container_name: credit-contract-database
-    restart: always
+    container_name: credit-contract-postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: credit_contract_database
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: credit-contract-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - backend
+    depends_on:
+      - postgres
 
 volumes:
   postgres_data:
+    name: credit-contract-postgres-data
+  pgadmin_data:
+    name: credit-contract-pgadmin-data
+
+networks:
+  backend:
+    name: credit-contract-network
+    driver: bridge
