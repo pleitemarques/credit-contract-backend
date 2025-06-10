@@ -1,0 +1,7 @@
+[run]
+source = contracts
+branch = True
+
+[report]
+omit = */migrations/*, */tests/*, */settings.py, manage.py
+show_missing = True
