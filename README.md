@@ -19,7 +19,7 @@ API para gerenciamento de contratos de crédito pessoal, desenvolvida como parte
 ## 📦 Como rodar o projeto com Docker
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 Acesse:
