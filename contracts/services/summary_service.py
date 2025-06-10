@@ -34,8 +34,8 @@ def get_contracts_summary(
     )
 
     return {
-        "total_receivable_amount": installment_totals.get("total_receivable_amount", 0),
-        "total_disbursed_amount": contract_totals.get("total_disbursed_amount", 0),
+        "total_receivable_amount": installment_totals.get("total_receivable_amount") or 0,
+        "total_disbursed_amount": contract_totals.get("total_disbursed_amount") or 0,
         "total_contracts": contract_totals.get("total_contracts", 0),
-        "average_contract_rate": contract_totals.get("average_contract_rate", 0),
+        "average_contract_rate": contract_totals.get("average_contract_rate") or 0
     }
