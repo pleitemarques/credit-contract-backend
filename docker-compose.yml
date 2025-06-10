@@ -30,6 +30,21 @@ services:
     depends_on:
       - postgres
 
+  application:
+    build: .
+    image: credit-contract-backend:latest
+    container_name: credit-contract-backend
+    env_file:
+      - .env
+    ports:
+      - "8001:80"
+    volumes:
+      - .:/code/
+    networks:
+      - backend
+    depends_on:
+      - postgres
+
 volumes:
   postgres_data:
     name: credit-contract-postgres-data

@@ -17,6 +17,8 @@ RUN poetry config virtualenvs.create false && poetry install --no-root --only=ma
 
 COPY ./ /code/
 
+RUN chmod +x /code/entrypoint.sh
+
 EXPOSE 80
 
-CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:80", "--log-level", "info", "--forwarded-allow-ips", "*"]
+ENTRYPOINT ["/code/entrypoint.sh"]
